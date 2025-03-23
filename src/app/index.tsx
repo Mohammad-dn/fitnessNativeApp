@@ -1,11 +1,15 @@
 import { View } from "@/components/general/Themed";
 import { useWorkouts } from "@/store";
 import { Link, router } from "expo-router";
+import { FlatList } from "react-native";
 import CustomButton from "../components/general/CustomButton";
+import WorkoutListItem from "../components/workouts/WorkoutListItem";
 
 export default function HomeScreen() {
 	const currentWorkout = useWorkouts((state) => state.currentWorkout);
 	const startWorkout = useWorkouts((state) => state.startWorkout);
+	const workouts = useWorkouts((state) => state.workouts);
+	console.log("🚀 ~ HomeScreen ~ workouts:", JSON.stringify(workouts));
 
 	const onStartWorkout = () => {
 		startWorkout();
@@ -32,11 +36,12 @@ export default function HomeScreen() {
 				/>
 			)}
 
-			{/* <FlatList
+			<FlatList
+				data={workouts}
 				contentContainerStyle={{ gap: 8 }}
 				renderItem={({ item }) => <WorkoutListItem workout={item} />}
 				showsVerticalScrollIndicator={false}
-			/> */}
+			/>
 		</View>
 	);
 }
