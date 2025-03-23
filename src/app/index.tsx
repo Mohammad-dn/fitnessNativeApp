@@ -9,11 +9,6 @@ export default function HomeScreen() {
 	const currentWorkout = useWorkouts((state) => state.currentWorkout);
 	const startWorkout = useWorkouts((state) => state.startWorkout);
 	const workouts = useWorkouts((state) => state.workouts);
-	console.log("🚀 ~ HomeScreen ~ workouts:", JSON.stringify(workouts));
-
-
-
-	
 
 	const onStartWorkout = () => {
 		startWorkout();

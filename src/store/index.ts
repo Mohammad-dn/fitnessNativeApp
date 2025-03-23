@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { WorkoutWithExercises } from "../types/models";
 
-import * as Crypto from "expo-crypto";
+import { newWorkout } from "../services/workoutService";
 
 type State = {
 	currentWorkout: WorkoutWithExercises | null;
@@ -15,14 +15,8 @@ export const useWorkouts = create<State & Actions>()((set, get) => ({
 	currentWorkout: null,
 	workouts: [],
 	startWorkout: () => {
-		const newWorkout: WorkoutWithExercises = {
-			id: Crypto.randomUUID(),
-			createdAt: new Date(),
-			finishedAt: null,
-			exercises: [],
-		};
 		set({
-			currentWorkout: newWorkout,
+			currentWorkout: newWorkout(),
 		});
 	},
 	finishWorkout: () => {
