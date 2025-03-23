@@ -11,6 +11,10 @@ export default function HomeScreen() {
 	const workouts = useWorkouts((state) => state.workouts);
 	console.log("🚀 ~ HomeScreen ~ workouts:", JSON.stringify(workouts));
 
+
+
+	
+
 	const onStartWorkout = () => {
 		startWorkout();
 		router.push("/workout/current");
