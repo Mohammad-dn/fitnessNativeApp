@@ -1,9 +1,9 @@
-import { View } from "@/components/general/Themed";
-import { useWorkouts } from "@/store";
-import { Link, router } from "expo-router";
-import { FlatList } from "react-native";
-import CustomButton from "../components/general/CustomButton";
-import WorkoutListItem from "../components/workouts/WorkoutListItem";
+import { View } from '@/components/general/Themed';
+import { useWorkouts } from '@/store';
+import { Link, router } from 'expo-router';
+import { FlatList } from 'react-native';
+import CustomButton from '../components/general/CustomButton';
+import WorkoutListItem from '../components/workouts/WorkoutListItem';
 
 export default function HomeScreen() {
 	const currentWorkout = useWorkouts((state) => state.currentWorkout);
@@ -12,7 +12,7 @@ export default function HomeScreen() {
 
 	const onStartWorkout = () => {
 		startWorkout();
-		router.push("/workout/current");
+		router.push('/workout/current');
 	};
 
 	return (
@@ -21,18 +21,14 @@ export default function HomeScreen() {
 				flex: 1,
 				gap: 10,
 				padding: 10,
-				backgroundColor: "transparent",
-			}}
-		>
+				backgroundColor: 'transparent',
+			}}>
 			{currentWorkout ? (
-				<Link href="/workout/current" asChild>
-					<CustomButton title="Resume workout" />
+				<Link href='/workout/current' asChild>
+					<CustomButton title='Resume workout' />
 				</Link>
 			) : (
-				<CustomButton
-					title="Start new workout"
-					onPress={onStartWorkout}
-				/>
+				<CustomButton title='Start new workout' onPress={onStartWorkout} />
 			)}
 
 			<FlatList
