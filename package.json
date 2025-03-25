@@ -10,7 +10,7 @@
 	},
 	"dependencies": {
 		"dayjs": "^1.11.13",
-		"expo": "~51.0.28",
+		"expo": "^52.0.0",
 		"expo-constants": "~16.0.2",
 		"expo-crypto": "~13.0.2",
 		"expo-drizzle-studio-plugin": "^0.0.2",
