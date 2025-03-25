@@ -8,13 +8,10 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 DarkTheme.colors.primary = Colors.dark.tint;
 DefaultTheme.colors.primary = Colors.light.tint;
 
-// const db = SQLite.openDatabaseSync(dbName);
-
 // SQLite.deleteDatabaseSync(dbName);
 
 export default function RootLayout() {
 	const colorScheme = useColorScheme();
-	// useDrizzleStudio(db);
 
 	// const loadWorkouts = useWorkouts((state) => state.loadWorkouts);
 
