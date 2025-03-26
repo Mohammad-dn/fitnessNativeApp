@@ -2,13 +2,14 @@
 	"expo": {
 		"name": "Fitness",
 		"slug": "Fitness",
-		"scheme": "notJustFit",
+		"scheme": "ali-fitness",
 		"version": "1.0.0",
 		"orientation": "portrait",
 		"icon": "./assets/icon.png",
 		"userInterfaceStyle": "automatic",
+		"newArchEnabled": true,
 		"splash": {
-			"image": "./assets/splash.png",
+			"image": "./assets/splash-icon.png",
 			"resizeMode": "contain",
 			"backgroundColor": "#ffffff"
 		},
@@ -19,11 +20,21 @@
 			"adaptiveIcon": {
 				"foregroundImage": "./assets/adaptive-icon.png",
 				"backgroundColor": "#ffffff"
-			}
+			},
+			"package": "com.alisabet.Fitness"
 		},
 		"web": {
 			"favicon": "./assets/favicon.png"
 		},
-		"plugins": ["expo-router", "expo-sqlite"]
+		"plugins": ["expo-router"],
+		"extra": {
+			"router": {
+				"origin": false
+			},
+			"eas": {
+				"projectId": "a6c260c8-b0af-4841-ad1a-b08914704f5b"
+			}
+		},
+		"owner": "alisabet"
 	}
 }

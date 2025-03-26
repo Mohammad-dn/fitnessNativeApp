@@ -1,9 +1,10 @@
-import { View } from '@/components/general/Themed';
-import { useWorkouts } from '@/store';
 import { Link, router } from 'expo-router';
 import { FlatList } from 'react-native';
-import CustomButton from '../components/general/CustomButton';
-import WorkoutListItem from '../components/workouts/WorkoutListItem';
+
+import CustomButton from '@/components/general/CustomButton';
+import { View } from '@/components/general/Themed';
+import WorkoutListItem from '@/components/workouts/WorkoutListItem';
+import { useWorkouts } from '@/store';
 
 export default function HomeScreen() {
 	const currentWorkout = useWorkouts((state) => state.currentWorkout);

@@ -1,12 +1,12 @@
-import WorkoutExerciseItem from '@/components/logger/WorkoutExerciseItem';
+import { useHeaderHeight } from '@react-navigation/elements';
+import { Redirect, Stack } from 'expo-router';
 import { FlatList, KeyboardAvoidingView, Platform } from 'react-native';
 
 import CustomButton from '@/components/general/CustomButton';
 import SelectExerciseModal from '@/components/logger/SelectExerciseModal';
+import WorkoutExerciseItem from '@/components/logger/WorkoutExerciseItem';
 import WorkoutHeader from '@/components/logger/WorkoutHeader';
 import { useWorkouts } from '@/store';
-import { useHeaderHeight } from '@react-navigation/elements';
-import { Redirect, Stack } from 'expo-router';
 
 export default function CurrentWorkoutScreen() {
 	const currentWorkout = useWorkouts((state) => state.currentWorkout);
